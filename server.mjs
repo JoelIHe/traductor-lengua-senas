@@ -37,7 +37,7 @@ createServer(async (request, response) => {
 
   response.setHeader("Content-Type", types[extname(filePath)] ?? "application/octet-stream");
   createReadStream(filePath).pipe(response);
-}).listen(port, "127.0.0.1", () => {
+}).listen(port, "0.0.0.0", () => {
   console.log(`VInculacion listo en http://localhost:${port}`);
 });
 
